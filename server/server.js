@@ -25,7 +25,6 @@ app.use("/api", (req, res) => {
 
 /* MONGOOSE */
 const dbURI = process.env.ATLAS_URI || "";
-//process.env.ATLAS_URI;
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
