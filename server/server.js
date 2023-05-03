@@ -23,6 +23,12 @@ app.use("/api", (req, res) => {
   res.status(404).send({ employee: "Not found..." });
 });
 
+/* REACT WEBSITE */
+app.use(express.static(path.join(__dirname, "../client/build")));
+app.use("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
 /* MONGOOSE */
 const dbURI = process.env.ATLAS_URI || "";
 
