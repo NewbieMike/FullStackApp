@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Header from "./Header";
-import EmployeePanel from "./EmployeePanel";
+import LeftPanel from "./LeftPanel/LeftPanel";
+import EmployeePanel from "./EmployeePanel/EmployeePanel";
 const Component = ({ children }) => {
   const [open, setOpen] = useState(false);
 
@@ -13,6 +14,7 @@ const Component = ({ children }) => {
     <div className="">
       <Header />
       <EmployeePanel open={open} togglePanel={togglePanel} />
+
       <div className={`resizable-panel ${open ? "resizable-panel_short" : ""}`}>
         {children}
       </div>

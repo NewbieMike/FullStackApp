@@ -4,13 +4,26 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.scss";
 import ErrorPage from "./error-page";
-import Employee from "./employee";
 
+import { AutchContextProvider } from "./AuthContext";
 import { MainLayout } from "./layout/MainLayout";
 import ToDoPage from "./views/ToDoPage";
 import HomePage from "./views/HomePage/HomePage";
+import Employee from "./views/Employee/Employee";
+import LoginPage from "./views/LoginPage/LoginPage";
+import RegisterPage from "./views/RegisterPage.js/RegisterPage";
 
 const router = createBrowserRouter([
+  {
+    path: "/register",
+    element: <RegisterPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+    errorElement: <ErrorPage />,
+  },
   {
     path: "/",
     element: <HomePage />,
@@ -30,8 +43,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <MainLayout>
-      <RouterProvider router={router} />
-    </MainLayout>
+    <AutchContextProvider>
+      <MainLayout>
+        <RouterProvider router={router} />
+      </MainLayout>
+    </AutchContextProvider>
   </React.StrictMode>
 );

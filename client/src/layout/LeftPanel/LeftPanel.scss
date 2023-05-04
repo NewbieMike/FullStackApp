@@ -1,4 +1,4 @@
-.employee-panel {
+.left-panel {
   position: fixed;
   top: 65px;
   left: 0;
@@ -9,15 +9,14 @@
   transition: 0.4s ease-in-out;
 }
 
-.employee-panel_open {
+.left-panel_open {
 }
 
-.employee-panel_hide {
+.left-panel_hide {
   transform: translate(-100%, 0%);
 }
 
 .panel-close_button {
   position: absolute;
-  top: 0;
   right: -30px;
 }
