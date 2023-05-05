@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const employeeRoutes = require("./routes/employee.routes");
-
+const userRoutes = require("./routes/user.routes");
 const app = express();
 
 /* MIDDLEWARE */
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 /* API ENDPOINTS */
 app.use("/api", employeeRoutes);
-
+app.use("/api/user", userRoutes);
 /* API ERROR PAGES */
 app.use("/api", (req, res) => {
   res.status(404).send({ employee: "Not found..." });

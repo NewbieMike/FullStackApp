@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
-import { UserIcon, SunIcon } from "@heroicons/react/24/outline";
 import "./EmployeePanel.scss";
-import LeftPanel from "../LeftPanel/LeftPanel";
 const EmployeePanel = (props) => {
   const [data, setData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     fetch("/api/employee/")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
 
-  const displayItem = (
+  const togglePanel = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
     <ul role="list" className="divide-y divide-gray-100">
       {data.map((person) => (
         <li key={person._id} className="flex justify-between gap-x-6 py-5">
@@ -40,16 +43,6 @@ const EmployeePanel = (props) => {
         </li>
       ))}
     </ul>
-  );
-
-  return (
-    <LeftPanel
-      togglePanel={props.togglePanel}
-      open={props.open}
-      icon={<UserIcon className="h-6 w-6" aria-hidden="true" />}
-      positionTop={0}
-      displayItem={displayItem}
-    />
   );
 };
 
