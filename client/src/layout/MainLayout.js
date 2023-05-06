@@ -26,7 +26,7 @@ const Component = ({ children }) => {
       <MainLeftPanel
         togglePanel={togglePanel}
         open={open}
-        displayItem={<EmployeePanel />}
+        displayItems={[<EmployeePanel />, <WeatherPanel />]}
       />
       <div className={`resizable-panel ${open ? "resizable-panel_short" : ""}`}>
         {children}

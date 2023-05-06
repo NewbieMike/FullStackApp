@@ -4,8 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-dotenv.config();
-
+dotenv.config({ override: true });
 const employeeRoutes = require("./routes/employee.routes");
 const userRoutes = require("./routes/user.routes");
 const app = express();
@@ -31,7 +30,7 @@ app.use("*", (req, res) => {
 
 /* MONGOOSE */
 const dbURI = process.env.ATLAS_URI || "";
-
+const weather = process.env.WEATHER_API || "";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.once("open", () => {

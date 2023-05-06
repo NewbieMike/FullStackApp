@@ -20,3 +20,21 @@
   position: absolute;
   right: -30px;
 }
+
+.leftPanel_header {
+  display: flex;
+  flex-wrap: wrap;
+}
+.leftPanel_header-item {
+  padding: 5px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  transition: 0.4s ease-in-out;
+}
+
+.leftPanel_header-item_active {
+  background-color: rgba(17, 24, 39, 1);
+  color: white;
+}
