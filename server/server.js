@@ -31,6 +31,7 @@ app.use("*", (req, res) => {
 /* MONGOOSE */
 const dbURI = process.env.ATLAS_URI || "";
 const weather = process.env.WEATHER_API || "";
+const weather2 = process.env.REACT_APP_WEATHER_API || "";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.once("open", () => {

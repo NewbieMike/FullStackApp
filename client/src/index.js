@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.scss";
 import ErrorPage from "./error-page";
 
-import { AutchContextProvider } from "./AuthContext";
+import { AutchContextProvider } from "./Context/AuthContext";
 import { MainLayout } from "./layout/MainLayout";
 import ToDoPage from "./views/ToDoPage";
 import HomePage from "./views/HomePage/HomePage";
